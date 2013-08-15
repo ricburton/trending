@@ -24,8 +24,8 @@ module Trending
           doc = Nokogiri::HTML(trending)
 
           leaderboard = []
-          doc.css('div.leaderboard-list-content').each do |listing|
-            rank              ||= listing.css('a.leaderboard-list-rank')
+          doc.css('li.repo-leaderboard-list-item.leaderboard-list-item').each do |listing|
+            rank              ||= listing.css('a.leaderboard-list-rank').text
             title             ||= listing.css('h2.repo-leaderboard-title a').text
             description_check ||= listing.css('p.repo-leaderboard-description')
 
