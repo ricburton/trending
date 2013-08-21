@@ -25,12 +25,15 @@ module Trending
 
           leaderboard = []
           doc.css('li.repo-leaderboard-list-item.leaderboard-list-item').each do |listing|
-            rank              ||= listing.css('a.leaderboard-list-rank').text
-            title             ||= listing.css('h2.repo-leaderboard-title a').text
-            description_check ||= listing.css('p.repo-leaderboard-description')
+            rank              = listing.css('a.leaderboard-list-rank').text
+            title_object = listing.css('h2.repo-leaderboard-title a')
+            title             = title_object.text
+            readme            = 'http://www.github.com' + title_object.first.attributes['href']
+            p readme
+            description_check = listing.css('p.repo-leaderboard-description')
 
             description_check.empty? ? description = 'No description.' : description = description_check.text
-            entry = {rank: rank, title: title, description: description, readme: 'http://github.com/richardburton/README'}
+            entry = {rank: rank, title: title, description: description, readme: readme}
             leaderboard << entry
           end
 
