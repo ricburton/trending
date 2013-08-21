@@ -30,7 +30,7 @@ module Trending
             description_check ||= listing.css('p.repo-leaderboard-description')
 
             description_check.empty? ? description = 'No description.' : description = description_check.text
-            entry = {rank: rank, title: title, description: description}
+            entry = {rank: rank, title: title, description: description, readme: 'http://github.com/richardburton/README'}
             leaderboard << entry
           end
 
