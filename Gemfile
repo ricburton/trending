@@ -6,5 +6,14 @@ gem 'nestful'
 gem 'nokogiri'
 gem 'nestful'
 gem 'json'
-gem 'unicorn'
-gem 'shotgun'
+gem 'dalli'
+gem 'memcachier'
+gem 'tux'
+
+group :production do
+  gem 'unicorn'
+end
+
+group :development do
+  gem 'shotgun'
+end
