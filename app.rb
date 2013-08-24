@@ -23,8 +23,10 @@ module Trending
         languages.each do |language|
           language.gsub!(/ |%20/, '-')
           language.downcase!
-
-          results[language] ||= settings.cache.fetch(language) do
+          cache = settings.cache.fetch(language)
+          if cache
+            results[language] = cache
+          else
             trending = Nestful.get("https://github.com/trending?l=#{language}")
             doc = Nokogiri::HTML(trending)
 
