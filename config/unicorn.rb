@@ -11,6 +11,6 @@ end
 
 after_fork do |server, worker|
   Signal.trap 'TERM' do
-    puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to sent QUIT'
+    puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master.'
   end
 end
