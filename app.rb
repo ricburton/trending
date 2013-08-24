@@ -55,7 +55,7 @@ module Trending
               leaderboard << entry
             end
             results[language] = leaderboard
-            settings.cache.set(language, leaderboard, 600)
+            settings.cache.set(language, leaderboard, 6000)
           end
         end
         json(results)
