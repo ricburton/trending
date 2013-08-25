@@ -23,10 +23,7 @@ module Trending
         languages.each do |language|
           language.gsub!(/ |%20/, '-')
           language.downcase!
-          cache = settings.cache.fetch(language)
-          if cache
-            results[language] = cache
-          else
+          results[language] = settings.cache.fetch(language) do
             trending = Nestful.get("https://github.com/trending?l=#{language}")
             doc = Nokogiri::HTML(trending)
 
@@ -54,8 +51,8 @@ module Trending
                         readme:      readme }
               leaderboard << entry
             end
-            results[language] = leaderboard
             settings.cache.set(language, leaderboard, 6000)
+            leaderboard
           end
         end
         json(results)
