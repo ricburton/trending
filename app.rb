@@ -18,6 +18,10 @@ module Trending
       end
     end
 
+    configure do
+      set :database, ENV['DATABASE_URL']
+    end
+
     get '/trending' do
       json(Models::Leaderboard.fetch(params[:languages]))
     end
