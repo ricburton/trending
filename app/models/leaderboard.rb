@@ -42,6 +42,7 @@ module Trending
                 leaderboard << entry
               end
               settings.cache.set(language, leaderboard, 6000)
+              p leaderboard
               leaderboard
             end
           end
