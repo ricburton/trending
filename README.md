@@ -11,13 +11,13 @@ Example response:
       "rank": "#1",
       "title": "gitlabhq/gitlabhq",
       "description": "Project management and code hosting  application. Follow us on twitter @gitlabhq",
-      "readme": "http://www.github.com/gitlabhq/gitlabhq"
+      "repo_url": "http://www.github.com/gitlabhq/gitlabhq"
     },
     {
       "rank": "#2",
       "title": "square/apropos",
       "description": "A simple way to serve up appropriate images for every visitor.",
-      "readme": "http://www.github.com/square/apropos"
+      "repo_url": "http://www.github.com/square/apropos"
     } # Until #25
   ],
   "objective-c": [
@@ -25,13 +25,13 @@ Example response:
       "rank": "#1",
       "title": "nicolaschengdev/WYPopoverController",
       "description": "WYPopoverController is for the presentation of content in popover on iPhone / iPad devices. Very customizable.",
-      "readme": "http://www.github.com/nicolaschengdev/WYPopoverController"
+      "repo_url": "http://www.github.com/nicolaschengdev/WYPopoverController"
     },
     {
       "rank": "#2",
       "title": "alobi/ALAlertBanner",
       "description": "A clean and simple alert banner for iPhone and iPad",
-      "readme": "http://www.github.com/alobi/ALAlertBanner"
+      "repo_url": "http://www.github.com/alobi/ALAlertBanner"
     } # Until #25
   ]
 }

@@ -26,7 +26,7 @@ module Trending
                 title_object = repo.css('h2.repo-leaderboard-title a')
                 title        = title_object.text
                 url          = 'http://www.github.com'
-                readme       = url + title_object.first.attributes['href']
+                repo_url     = url + title_object.first.attributes['href']
                 description_check = repo.css('p.repo-leaderboard-description')
 
                 if description_check.empty?
@@ -38,7 +38,7 @@ module Trending
                 entry = { rank:        rank,
                           title:       title,
                           description: description,
-                          readme:      readme }
+                          repo_url:    repo_url }
                 leaderboard << entry
               end
               settings.cache.set(language, leaderboard, 6000)
