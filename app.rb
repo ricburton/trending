@@ -5,6 +5,7 @@ Bundler.require
 
 $LOAD_PATH << File.expand_path('../', __FILE__)
 set :root, File.dirname(__FILE__)
+set :environment, :production
 
 require 'app/models'
 
