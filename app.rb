@@ -5,6 +5,8 @@ Bundler.require
 
 $LOAD_PATH << File.expand_path('../', __FILE__)
 set :root, File.dirname(__FILE__)
+# sinatra security policy change
+# set :environment, :production
 
 require 'app/models'
 

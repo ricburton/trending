@@ -19,11 +19,11 @@ module Trending
 
               leaderboard = []
               repos = doc.css(
-                'li.repo-leaderboard-list-item.leaderboard-list-item'
+                'li.repo-list-item'
               )
               repos.each do |repo|
                 rank         = repo.css('a.leaderboard-list-rank').text
-                title_object = repo.css('h2.repo-leaderboard-title a')
+                title_object = repo.css('h3.repo-list-name a')
                 title        = title_object.text
                 url          = 'http://www.github.com'
                 repo_url     = url + title_object.first.attributes['href']
