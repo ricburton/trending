@@ -9,14 +9,12 @@ module Trending
         results = {}
         begin
           languages.each do |language|
-						puts(language)
             language.gsub!(/ |%20/, '-')
             language.downcase!
             results[language] = settings.cache.fetch(language) do
               trending = Nestful.get(
                 "https://github.com/trending?l=#{language}"
               )
-							puts("https://github.com/trending?l=#{language}")
               doc = Nokogiri::HTML(trending)
 
               leaderboard = []
